@@ -1,9 +1,11 @@
+// 3X3 í–‰ë ¬ì‹ ê³„ì‚°ê¸° 
+
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 
 #define N 3
 
-// Çà·Ä Ãâ·Â ÇÔ¼ö
+// í–‰ë ¬ ì¶œë ¥ í•¨ìˆ˜
 void printMatrix(float mat[N][N]) {
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < N; j++) {
@@ -13,7 +15,7 @@ void printMatrix(float mat[N][N]) {
     }
 }
 
-// µÎ Çà·ÄÀÇ µ¡¼À
+// ë‘ í–‰ë ¬ì˜ ë§ì…ˆ
 void addMatrices(float mat1[N][N], float mat2[N][N], float result[N][N]) {
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < N; j++) {
@@ -22,7 +24,7 @@ void addMatrices(float mat1[N][N], float mat2[N][N], float result[N][N]) {
     }
 }
 
-// µÎ Çà·ÄÀÇ »¬¼À
+// ë‘ í–‰ë ¬ì˜ ëº„ì…ˆ
 void subtractMatrices(float mat1[N][N], float mat2[N][N], float result[N][N]) {
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < N; j++) {
@@ -31,7 +33,7 @@ void subtractMatrices(float mat1[N][N], float mat2[N][N], float result[N][N]) {
     }
 }
 
-// µÎ Çà·ÄÀÇ °ö¼À
+// ë‘ í–‰ë ¬ì˜ ê³±ì…ˆ
 void multiplyMatrices(float mat1[N][N], float mat2[N][N], float result[N][N]) {
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < N; j++) {
@@ -43,7 +45,7 @@ void multiplyMatrices(float mat1[N][N], float mat2[N][N], float result[N][N]) {
     }
 }
 
-// Ã¹ ¹øÂ° Çà·ÄÀÇ Á¦°ö
+// ì²« ë²ˆì§¸ í–‰ë ¬ì˜ ì œê³±
 void squareMatrices_1(float mat1[N][N], float result[N][N]) {
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < N; j++) {
@@ -55,7 +57,7 @@ void squareMatrices_1(float mat1[N][N], float result[N][N]) {
     }
 }
 
-// µÎ ¹øÂ° Çà·ÄÀÇ Á¦°ö
+// ë‘ ë²ˆì§¸ í–‰ë ¬ì˜ ì œê³±
 void squareMatrices_2(float mat2[N][N], float result[N][N]) {
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < N; j++) {
@@ -67,7 +69,7 @@ void squareMatrices_2(float mat2[N][N], float result[N][N]) {
     }
 }
 
-// Çà·ÄÀÇ ÀüÄ¡
+// í–‰ë ¬ì˜ ì „ì¹˜
 void transposeMatrix(float mat[N][N], float result[N][N]) {
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < N; j++) {
@@ -76,7 +78,7 @@ void transposeMatrix(float mat[N][N], float result[N][N]) {
     }
 }
 
-// Çà·Ä½Ä °è»ê
+// í–‰ë ¬ì‹ ê³„ì‚°
 float determinant(float mat[N][N]) {
     float det = 0;
 
@@ -87,12 +89,12 @@ float determinant(float mat[N][N]) {
     return det;
 }
 
-// ¿ªÇà·Ä °è»ê
+// ì—­í–‰ë ¬ ê³„ì‚°
 void inverseMatrix(float mat[N][N], float result[N][N]) {
     float det = determinant(mat);
 
     if (det == 0) {
-        printf("¿ªÇà·ÄÀÌ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.\n");
+        printf("ì—­í–‰ë ¬ì´ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.\n");
         return;
     }
 
@@ -103,8 +105,8 @@ void inverseMatrix(float mat[N][N], float result[N][N]) {
     }
 }
 
-// mat1^(-1)ÀÌ ¿ªÇà·ÄÀÌ ¸Â´ÂÁö Ã¼Å©
-// ¿ªÇà·ÄÀÌ ¸Â´Ù¸é,mat1*mat1^(-1)Àº ´ÜÀ§ Çà·ÄÀÌ Ãâ·ÂµÇ¾î¾ß ÇÑ´Ù.
+// mat1^(-1)ì´ ì—­í–‰ë ¬ì´ ë§ëŠ”ì§€ ì²´í¬
+// ì—­í–‰ë ¬ì´ ë§ë‹¤ë©´,mat1*mat1^(-1)ì€ ë‹¨ìœ„ í–‰ë ¬ì´ ì¶œë ¥ë˜ì–´ì•¼ í•œë‹¤.
 void check_1(float mat1[N][N], float result[N][N], float result1[N][N]) {
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < N; j++) {
@@ -116,8 +118,8 @@ void check_1(float mat1[N][N], float result[N][N], float result1[N][N]) {
     }
 }
 
-// mat2^(-1)ÀÌ ¿ªÇà·ÄÀÌ ¸Â´ÂÁö Ã¼Å©
-// ¿ªÇà·ÄÀÌ ¸Â´Ù¸é,mat2*mat2^(-1)Àº ´ÜÀ§ Çà·ÄÀÌ Ãâ·ÂµÇ¾î¾ß ÇÑ´Ù.
+// mat2^(-1)ì´ ì—­í–‰ë ¬ì´ ë§ëŠ”ì§€ ì²´í¬
+// ì—­í–‰ë ¬ì´ ë§ë‹¤ë©´,mat2*mat2^(-1)ì€ ë‹¨ìœ„ í–‰ë ¬ì´ ì¶œë ¥ë˜ì–´ì•¼ í•œë‹¤.
 void check_2(float mat2[N][N], float result[N][N], float result2[N][N]) {
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < N; j++) {
@@ -132,10 +134,10 @@ void check_2(float mat2[N][N], float result[N][N], float result2[N][N]) {
 int main() {
     float mat1[N][N], mat2[N][N];
 
-    printf("***** 3X3 Çà·Ä½Ä °è»ê±â *****\n");
+    printf("***** 3X3 í–‰ë ¬ì‹ ê³„ì‚°ê¸° *****\n");
     
     printf("\n");
-    printf("Ã¹ ¹øÂ° 3x3 Çà·ÄÀ» ÀÔ·ÂÇÏ¼¼¿ä:\n");
+    printf("ì²« ë²ˆì§¸ 3x3 í–‰ë ¬ì„ ì…ë ¥í•˜ì„¸ìš”:\n");
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < N; j++) {
             scanf("%f", &mat1[i][j]);
@@ -143,75 +145,75 @@ int main() {
     }
 
     printf("\n");
-    printf("µÎ ¹øÂ° 3x3 Çà·ÄÀ» ÀÔ·ÂÇÏ¼¼¿ä:\n");
+    printf("ë‘ ë²ˆì§¸ 3x3 í–‰ë ¬ì„ ì…ë ¥í•˜ì„¸ìš”:\n");
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < N; j++) {
             scanf("%f", &mat2[i][j]);
         }
     }
 
-    float result[N][N]; // °á°ú Çà·Ä
-    float result1[N][N], result2[N][N]; // °á°ú1, 2 Çà·Ä
+    float result[N][N]; // ê²°ê³¼ í–‰ë ¬
+    float result1[N][N], result2[N][N]; // ê²°ê³¼1, 2 í–‰ë ¬
 
     printf("\n");
-    printf("µÎ Çà·ÄÀÇ µ¡¼À °á°ú:\n");
+    printf("ë‘ í–‰ë ¬ì˜ ë§ì…ˆ ê²°ê³¼:\n");
     addMatrices(mat1, mat2, result);
     printMatrix(result);
 
     printf("\n");
-    printf("µÎ Çà·ÄÀÇ »¬¼À °á°ú:\n");
+    printf("ë‘ í–‰ë ¬ì˜ ëº„ì…ˆ ê²°ê³¼:\n");
     subtractMatrices(mat1, mat2, result);
     printMatrix(result);
 
     printf("\n");
-    printf("µÎ Çà·ÄÀÇ °ö¼À °á°ú:\n");
+    printf("ë‘ í–‰ë ¬ì˜ ê³±ì…ˆ ê²°ê³¼:\n");
     multiplyMatrices(mat1, mat2, result);
     printMatrix(result);
 
     printf("\n");
-    printf("Ã¹ ¹øÂ° Çà·ÄÀÇ Á¦°ö °á°ú:\n");
+    printf("ì²« ë²ˆì§¸ í–‰ë ¬ì˜ ì œê³± ê²°ê³¼:\n");
     squareMatrices_1(mat1, result);
     printMatrix(result);
 
     printf("\n");
-    printf("µÎ ¹øÂ° Çà·ÄÀÇ Á¦°ö °á°ú:\n");
+    printf("ë‘ ë²ˆì§¸ í–‰ë ¬ì˜ ì œê³± ê²°ê³¼:\n");
     squareMatrices_2(mat2, result);
     printMatrix(result);
 
     printf("\n");
-    printf("Ã¹ ¹øÂ° Çà·ÄÀÇ ÀüÄ¡ Çà·Ä:\n");
+    printf("ì²« ë²ˆì§¸ í–‰ë ¬ì˜ ì „ì¹˜ í–‰ë ¬:\n");
     transposeMatrix(mat1, result);
     printMatrix(result);
 
     printf("\n");
-    printf("µÎ ¹øÂ° Çà·ÄÀÇ ÀüÄ¡ Çà·Ä:\n");
+    printf("ë‘ ë²ˆì§¸ í–‰ë ¬ì˜ ì „ì¹˜ í–‰ë ¬:\n");
     transposeMatrix(mat2, result);
     printMatrix(result);
 
     printf("\n");
-    printf("Ã¹ ¹øÂ° Çà·ÄÀÇ Çà·Ä½Ä: %.2f\n", determinant(mat1));
+    printf("ì²« ë²ˆì§¸ í–‰ë ¬ì˜ í–‰ë ¬ì‹: %.2f\n", determinant(mat1));
 
     printf("\n");
-    printf("µÎ ¹øÂ° Çà·ÄÀÇ Çà·Ä½Ä: %.2f\n", determinant(mat2));
+    printf("ë‘ ë²ˆì§¸ í–‰ë ¬ì˜ í–‰ë ¬ì‹: %.2f\n", determinant(mat2));
 
     printf("\n");
-    printf("Ã¹ ¹øÂ° Çà·ÄÀÇ ¿ªÇà·Ä:\n");
+    printf("ì²« ë²ˆì§¸ í–‰ë ¬ì˜ ì—­í–‰ë ¬:\n");
     inverseMatrix(mat1, result);
     printMatrix(result);
 
     printf("\n");
-    printf("µÎ ¹øÂ° Çà·ÄÀÇ ¿ªÇà·Ä:\n");
+    printf("ë‘ ë²ˆì§¸ í–‰ë ¬ì˜ ì—­í–‰ë ¬:\n");
     inverseMatrix(mat2, result);
     printMatrix(result);
 
     printf("\n");
-    printf("Ã¹ ¹øÂ° Çà·ÄÀÇ ¿ªÇà·Ä È®ÀÎ:\n");
+    printf("ì²« ë²ˆì§¸ í–‰ë ¬ì˜ ì—­í–‰ë ¬ í™•ì¸:\n");
     inverseMatrix(mat1, result);
     check_1(mat1, result, result1);
     printMatrix(result1);
 
     printf("\n");
-    printf("µÎ ¹øÂ° Çà·ÄÀÇ ¿ªÇà·Ä È®ÀÎ:\n");
+    printf("ë‘ ë²ˆì§¸ í–‰ë ¬ì˜ ì—­í–‰ë ¬ í™•ì¸:\n");
     inverseMatrix(mat2, result);
     check_2(mat2, result, result2);
     printMatrix(result2);
